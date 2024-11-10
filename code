@@ -1,0 +1,99 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+void rock();
+void paper();
+void scissor();
+int main(){
+    char you , com ;
+    int random ;
+    printf("R for rock P for paper & S for sissor\n");
+    printf("Choose a option => ");
+    scanf("%c",&you);
+    if(you=='r') you ='R';
+    if(you=='p') you ='P';
+    if(you=='s') you ='S';
+   
+   
+    if(!(you=='R' || you=='P' || you=='S')){
+         printf("please CHOOSE WRIGHT option");
+         return 0;
+    }
+    srand(time(NULL));
+    random = rand()%3;
+    if(random==0)com ='R';
+    if(random==1)com ='P';
+    if(random==2)com ='S';
+    printf("your hand\n\n");
+    if(you=='R') rock();
+    if(you=='P') paper();
+    if(you=='S') scissor();
+    printf("\n\n\n");
+    printf("computer hand\n\n");
+    if(com=='R') rock();
+    if(com=='P') paper();
+    if(com=='S') scissor();
+
+
+    if(you==com) printf("sorry mass DRAW, PLEASE try again");
+    else{
+         if(you=='R' && com =='P') printf("\n\nyou loss");
+         if(you=='R' && com =='S') printf("\n\ncongratulation* you win!!");
+         if(you=='P' && com =='R') printf("\n\ncongratulation* you win!!");
+         if(you=='P' && com =='S') printf("\n\nyou loss");
+         if(you=='S' && com =='R') printf("\n\nyou loss");
+         if(you=='S' && com =='P') printf("\n\ncongratulation* you win!!");
+         
+       }
+
+    return 0;
+}
+void rock(){
+     printf("   ##    ##    ##     #  \n");
+     printf("  ####  ####  ####   ### \n");
+     printf("#########################\n");
+     printf(" ####################### \n");
+     printf("  #####################  \n");
+     printf("   ###################   \n");
+     printf("    #################    \n");
+     printf("     ###############     \n");
+     printf("      #############      \n");
+     printf("##########################\n");
+     printf("##########################\n");
+}
+void paper(){
+     printf("   ##    ##    ##     #  \n");
+     printf("  ####  ####  ####   ### \n");
+     printf("   ##    ##    ##     #  \n");
+     printf("  ####  ####  ####   ### \n");
+     printf("   ##    ##    ##     #  \n");
+     printf("  ####  ####  ####   ### \n");
+     printf("   ##    ##    ##     #  \n");
+     printf("  ####  ####  ####   ### \n");
+     printf("#########################\n");
+     printf(" ####################### \n");
+     printf("  #####################  \n");
+     printf("   ###################   \n");
+     printf("    #################    \n");
+     printf("     ###############     \n");
+     printf("      #############      \n");
+     printf("##########################\n");
+     printf("##########################\n");
+}
+void scissor(){
+     printf("             ##    ##    \n");
+     printf("            ####  ####   \n");
+     printf("             ##    ##    \n");
+     printf("            ####  ####   \n");
+     printf("             ##    ##    \n");
+     printf("            ####  ####   \n");
+     printf("    ####################\n");
+     printf("    #################### \n");
+     printf("    ###################  \n");
+     printf("    ##################   \n");
+     printf("    #################    \n");
+     printf("     ###############     \n");
+     printf("      #############      \n");
+     printf("##########################\n");
+     printf("##########################\n");
+}
